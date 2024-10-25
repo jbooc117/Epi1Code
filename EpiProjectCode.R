@@ -72,30 +72,31 @@ ggplot(data=(Epi1ProjectNonTB), aes(x=Age, y=Freq)) +
 barplot(table(Epi1ProjectNonTB$Age))
 
 table(Epi1ProjectNonTB$Fatality)
-#19/50 deaths
+#66/350 deaths
 
 table(Epi1ProjectNonTB$Fever)
-#28/50 have fever
+#207/350 have fever
 
 table(Epi1ProjectNonTB$Rash)
-#5/50 have rash
+#81/269 have rash
 
 table(Epi1ProjectNonTB$`Respiratory symptoms`)
-#34/50 have respiratory symptoms
+#72/278 have respiratory symptoms
 
 table(Epi1ProjectNonTB$Seizure)
-#2/50 have seizures
+#140/210 have seizures
 
 table(Epi1ProjectNonTB$Diarrhea)
-#13/50 have diarrhea
+#101/249 have diarrhea
 
 table(Epi1ProjectNonTB$`Mosquito contact`)
-#20/50 had mosquito contact
+#207/350 had mosquito contact
 
 table(Epi1ProjectNonTB$`Tick contact`)
-#4/50 had tick contact
+#54/350 had tick contact
 
 table(Epi1ProjectNonTB$`Immune compromised`)
-#33/50 are immunocompromised
+#75/350 are immunocompromised
 
 table(Epi1ProjectNonTB$`History of consuming undercooked meats`)
+#85/350
