@@ -25,12 +25,16 @@ table(Epi1ProjectTuberculosis$Age)
 
 table(Epi1ProjectTuberculosis$Fatality)
 #19/50 deaths
+#OR: (19*284) / (66*31) = 2.6373
+#(TB Death * NonTB No Death) / (Non TB Death * TB No Death)
 
 table(Epi1ProjectTuberculosis$Fever)
 #28/50 have fever
+#OR: (28*143) / (207*22) = 0.8792
 
 table(Epi1ProjectTuberculosis$Rash)
 #5/50 have rash
+#OR: () / ()
 
 table(Epi1ProjectTuberculosis$`Respiratory symptoms`)
 #34/50 have respiratory symptoms
@@ -72,13 +76,13 @@ ggplot(data=(Epi1ProjectNonTB), aes(x=Age, y=Freq)) +
 barplot(table(Epi1ProjectNonTB$Age))
 
 table(Epi1ProjectNonTB$Fatality)
-#66/350 deaths
+#66/350 deaths (284)
 
 table(Epi1ProjectNonTB$Fever)
-#207/350 have fever
+#207/350 have fever (143)
 
 table(Epi1ProjectNonTB$Rash)
-#81/269 have rash
+#81/269 have rash (188)
 
 table(Epi1ProjectNonTB$`Respiratory symptoms`)
 #72/278 have respiratory symptoms
