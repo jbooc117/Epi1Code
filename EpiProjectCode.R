@@ -1,6 +1,8 @@
 library(readr)
 library(dplyr)
 library(ggplot2)
+library(EpiCurve)
+library(MASS)
 
 
 
@@ -11,7 +13,7 @@ View(Epi1project_xlsx_Sheet1)
 
 Epi1ProjectTuberculosis = filter(Epi1project_xlsx_Sheet1, 
                                  `Organism/Disease identified` == 
-                                  "Mycobacterium tuberculosis")
+                                   "Mycobacterium tuberculosis")
 View(Epi1ProjectTuberculosis)
 
 table(Epi1project_xlsx_Sheet1$`Organism/Disease identified`)
@@ -60,8 +62,8 @@ table(Epi1ProjectTuberculosis$`History of consuming undercooked meats`)
 ###Frequency for non-TB diseases
 
 Epi1ProjectNonTB = filter(Epi1project_xlsx_Sheet1, 
-                                 `Organism/Disease identified` != 
-                                   "Mycobacterium tuberculosis")
+                          `Organism/Disease identified` != 
+                            "Mycobacterium tuberculosis")
 View(Epi1ProjectNonTB)
 
 table(Epi1ProjectNonTB$Sex)
@@ -82,7 +84,7 @@ table(Epi1ProjectNonTB$Fever)
 #207/350 have fever (143)
 
 table(Epi1ProjectNonTB$Rash)
-#81/269 have rash (188)
+#81/350 have rash (269)
 
 table(Epi1ProjectNonTB$`Respiratory symptoms`)
 #72/278 have respiratory symptoms
@@ -104,3 +106,16 @@ table(Epi1ProjectNonTB$`Immune compromised`)
 
 table(Epi1ProjectNonTB$`History of consuming undercooked meats`)
 #85/350
+
+
+### Epi Curve
+ggplot(Epi1ProjectTuberculosis, aes(Epi1ProjectTuberculosis$`Date of Disease Onset`, 
+                                    Epi1ProjectTuberculosis$`Organism/Disease identified`))
+
+hist(Epi1ProjectTuberculosis$`Date of Disease Onset`)
+
+
+### Chi Square test for Age
+t.test(Epi1ProjectTuberculosis$Age)
+
+chisq.test(Epi1ProjectTuberculosis$Age)
